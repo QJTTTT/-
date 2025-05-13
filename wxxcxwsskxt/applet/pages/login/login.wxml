@@ -1,0 +1,42 @@
+<view class="container1">
+    <view style="display: flex; justify-content: center; margin-top: 200rpx; margin-bottom: 100rpx">
+        <image src="/static/logo.png" mode="widthFix" style="width: 100%; border-radius: 10rpx; height: 116px"></image>
+    </view>
+
+    <view class="login-box">
+        <van-cell-group border>
+            <van-field border value="{{ form.username }}" bindchange="onInput" data-name="form.username" placeholder="请输入用户名" />
+            <van-field border type="password" value="{{ form.pwd }}" bindchange="onInput" data-name="form.pwd" placeholder="请输入密码" />
+        </van-cell-group>
+
+        <van-radio-group wx:if="{{ rules.length > 1 }}" value="{{ form.cx }}" class="flex-between" style="padding: 10px; background: #fff" bindchange="onInput" data-name="form.cx">
+            <van-radio name="用户">用户</van-radio>
+        </van-radio-group>
+        <view>
+            <van-button bindclick="login" block round type="primary">登录</van-button>
+        </view>
+        <view class="register-list register-{{ registers.length }}">
+            <van-button bindclick="goUrl" wx:for="{{ registers }}" size="small" round data-url="{{ item.url }}" type="{{ item.type }}">{{ item.btn }}</van-button>
+        </view>
+
+        <view class="wx-login">
+            <view class="login-title">快捷登录：</view>
+            <!-- 微信快捷登录 -->
+            <view>
+                <van-button size="small" bind:click="wxlogin" type="info" round plain icon="/static/wexin.png"> 微信快捷登录 </van-button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<van-dialog use-slot title="温馨提示" show="{{ showDialog }}" show-confirm-button="{{ false }}" bind:close="onInputValue" data-name="showDialog" data-value="{{ false }}">
+    <view style="text-align: center; padding: 20px"> {{ message }} </view>
+
+    <view class="register-list register-dialog">
+        <van-button class="btn" block type="da" bindclick="onInputValue" size="small" data-name="showDialog" data-value="{{ false }}">取消</van-button>
+        <van-button class="btn" block bindclick="goUrl2" wx:for="{{ registers }}" size="small" data-url="{{ item.url }}?openid={{ openid }}" type="{{ item.type }}"
+            >{{ item.btn }}</van-button
+        >
+    </view>
+</van-dialog>
+

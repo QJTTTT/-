@@ -1,0 +1,22 @@
+<view wx:if="{{ lists.length > 0 }}">
+    <view class="alists-list" wx:for="{{ lists }}" wx:for-item="map">
+        <view class="alists-info">
+            <view class="left title">图书名： {{ map.biaoti }} </view>
+            <view class="right">  </view>
+        </view>
+        <view class="alists-info">
+            <view class="left tdown">收藏时间：{{ map.addtime }} </view>
+            <view class="right rdown"> </view>
+        </view>
+
+        <view class="alists-info alists-btn">
+            <view class="left tdown"> </view>
+            <view class="right rdown">
+                <van-button type="danger" size="small" bindclick="goUrl" style="margin-right: 10px;" data-url="/pages/{{map.biao}}/detail?id={{ map.xwid }}">详情</van-button> 
+                <van-button type="danger" size="small" bindclick="removeItem" data-id="{{ map.id }}">删除</van-button>
+            </view>
+        </view>
+    </view>
+</view>
+<van-empty wx:elif="{{ !loading }}" description="没有找到相关数据" />
+<v-footer />

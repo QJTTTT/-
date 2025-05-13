@@ -1,0 +1,31 @@
+<view class="handler-lists-box" wx:if="{{ lists.length > 0 }}">
+    <view wx:for="{{lists}}" wx:for-item="r" wx:key="{{ r.id }}" class="handler-lists-main">
+        <view class="handler-lists-item" bindtap="goUrl" data-url="/pages/tousujianyi/detail?id={{ r.id }}">
+            <view class="handler-content">
+                <view class="handler-content-box">
+                    <view class="handler-content-left multi-line-1">反馈人： {{ r.xingming }} </view>
+                    <view class="handler-content-right multi-line-1">反馈时间： {{ r.addtime }} </view>
+                </view>
+                <view class="handler-content-box">
+                    <view class="handler-content-left multi-line-1">状态： {{ r.fankuizhuangtai }} </view>
+                    <view class="handler-content-right multi-line-1">类型： {{ r.fankuileixing }} </view>
+                </view>
+                <view class="handler-content-newLine">
+                    <view class="new-line-content multi-line-2">
+                        <view class="">反馈内容： {{ r.fankuineirong }} </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="handler-action-list">
+          
+            <view class="handler-action-item">
+                <van-button size="small" round plain type="danger" bindclick="removeItem" data-id="{{ r.id }}">删除 </van-button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<van-empty wx:elif="{{ !loading }}" description="没有找到相关数据" />
+<v-footer />

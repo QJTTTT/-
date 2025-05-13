@@ -1,0 +1,38 @@
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书号 </view>
+            <view style="color: #999999"> {{ map.tushuhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书名称 </view>
+            <view style="color: #999999"> {{ map.tushumingcheng }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书类别 </view>
+            <view style="color: #999999"> <e-select-view module="tushuzhonglei" value="{{ map.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅单号 </view>
+            <view style="color: #999999"> {{ map.jieyuedanhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅时间 </view>
+            <view style="color: #999999"> {{ map.jieyueshijian }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 归还时间 </view>
+            <view style="color: #999999"> {{ map.guihuanshijian }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 续借到 </view>
+            <view style="color: #999999"> {{ map.xujiedao }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<view style="padding-bottom: 20rpx">
+    <view class="cell-title" style="padding: 8rpx; background: #FFFFFF"> 续借备注 </view>
+    <view style="padding: 30rpx; line-height: 26px; background: #ffffff"> {{ map.xujiebeizhu }} </view>
+</view>
+<v-footer />

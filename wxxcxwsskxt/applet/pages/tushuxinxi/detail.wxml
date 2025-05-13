@@ -1,0 +1,112 @@
+<view>
+    <van-cell-group> </van-cell-group>
+</view>
+
+<view style="height: 10rpx; background: #f2f2f2"></view>
+
+<view style="height: 10rpx; background: #f2f2f2"></view>
+
+<e-img src="{{ map.tupian }}" pb="100"></e-img>
+
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书号 </view>
+            <view style="color: #999999"> {{ map.tushuhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书名称 </view>
+            <view style="color: #999999"> {{ map.tushumingcheng }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书类别 </view>
+            <view style="color: #999999"> <e-select-view module="tushuzhonglei" value="{{ map.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅金额 </view>
+            <view style="color: #999999"> {{ map.jieyuejine }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书库存 </view>
+            <view style="color: #999999"> {{ map.tushukucun }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> ISBN号 </view>
+            <view style="color: #999999"> {{ map.isbnhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 作者 </view>
+            <view style="color: #999999"> {{ map.zuozhe }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 出版社 </view>
+            <view style="color: #999999"> {{ map.chubanshe }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅次数 </view>
+            <view style="color: #999999"> {{ map.jieyuecishu }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<van-tabs>
+    <van-tab title="图书简介">
+        <view style="padding-bottom: 20rpx">
+            <view style="padding: 30rpx; line-height: 26px; background: #ffffff"> <rich-text nodes="{{ map.jianjie }}"></rich-text> </view>
+        </view>
+    </van-tab>
+    <van-tab title="图书评价">
+        <view class="commit-content">
+            <van-cell-group>
+                <van-cell title="评分">
+                    <van-rate value="{{ commitRate }}" :size="25" data-name="commitRate" bindchange="onInput" color="#ffd21e" void-icon="star" void-color="#eee" />
+                </van-cell>
+                <van-field type="textarea" value="{{ commitContent }}" maxlength="80" bindinput="onInput" data-name="commitContent" placeholder="请输入评论内容..."></van-field>
+            </van-cell-group>
+
+            <view class="commit-btn">
+                <view> 字数：{{ commitContent.length }} / 80 </view>
+                <van-button round type="primary" bindclick="submitCommit" size="small">评论</van-button>
+            </view>
+        </view>
+
+        <view class="commit-list">
+            <view wx:for="{{ commitList }}" wx:for-item="commit">
+                <view class="commit-info">
+                    <view class="commit-user-headimg radius">
+                        <e-img class="user-img" pb="100" src="{{ commit.headimgurl }}" />
+                    </view>
+                    <view class="commit-user-content">
+                        <view class="commit-user-nickname">
+                            <view> {{ commit.nickname }} </view>
+                            <view>
+                                <van-rate value="{{ commit.pingfen }}" size="{{ 18 }}" color="#ffd21e" readonly void-icon="star" void-color="#eee" />
+                            </view>
+                        </view>
+                        <view class="commit-user-time"> {{ commit.addtime }} </view>
+                        <view class="commit-content"> {{ commit.pinglunneirong }} </view>
+                    </view>
+                </view>
+                <view class="commit-line-block"></view>
+            </view>
+        </view>
+    </van-tab>
+</van-tabs>
+
+<view style="height: 50px"></view>
+
+<van-goods-action margin-bottom="91rpx" safe-area-inset-bottom="{{ false }}">
+    <van-goods-action-icon bindclick="onShoucangChange" text="{{ is_shoucang ? '已收藏' : '收藏' }}">
+        <view class="van-goods-action-icon__icon icon-class" style="font-size: 36rpx;{{ is_shoucang ? 'color:#F05159;' : '' }}" slot="icon">
+            <block wx:if="{{ is_shoucang }}"> <view class="van-icon van-icon-star" style=""></view> </block>
+            <block wx:else> <view class="van-icon van-icon-star-o" style=""></view> </block>
+        </view>
+    </van-goods-action-icon>
+
+    <van-goods-action-button url="/pages/tushujieyue/add?id={{ map.id }}" type="primary" text="图书借阅" />
+</van-goods-action>
+<v-footer />

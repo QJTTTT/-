@@ -1,0 +1,20 @@
+<view>
+    <view wx:if="{{ sdkType == 'choose' }}" class="weixin-chooseAvatar">
+        <button class="weixin-chooseAvatar-btn" plain open-type="chooseAvatar" bindchooseavatar="chooseAvatar">
+            <van-icon wx:if="{{ !src }}" class="ico" name="photograph"></van-icon>
+            <e-img src="{{ src }}" wx:else class="image" pb="100" />
+        </button>
+        <view> 上传头像 </view>
+    </view>
+    <view wx:else class="weixin-chooseAvatar">
+        <van-uploader preview-full-image="{{ false }}" preview-file="{{ false }}" accept="image" bind:after-read="afterRead" max-count="1">
+            <button class="weixin-chooseAvatar-btn" plain>
+                <van-icon wx:if="{{ !src }}" class="ico" name="photograph"></van-icon>
+                <e-img src="{{ src }}" wx:else class="image" pb="100" />
+            </button>
+        </van-uploader>
+        <view style="margin-top: 15px">
+            <van-button bind:click="getUserProfile" type="primary">获取微信头像</van-button>
+        </view>
+    </view>
+</view>

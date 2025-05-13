@@ -1,0 +1,15 @@
+<view class="container1">
+    <view style="display: flex; justify-content: center; margin-top: 200rpx; margin-bottom: 100rpx">
+        <image src="/static/logo.png" mode="widthFix" style="width: 28%; border-radius: 10rpx; height: 116px"></image>
+    </view>
+
+    <van-cell-group border>
+        <van-field border label="原密码" type="password" value="{{ form.oldPassword }}" bindchange="onInput" data-name="form.oldPassword" placeholder="请输入原密码" />
+        <van-field border label="新密码" type="password" value="{{ form.newPassword }}" bindchange="onInput" data-name="form.newPassword" placeholder="请输入新密码" />
+        <van-field border label="确认密码" type="password" value="{{ form.confirmPassword }}" bindchange="onInput" data-name="form.confirmPassword" placeholder="请输入确认密码" />
+    </van-cell-group>
+
+    <view style="padding: 15rpx">
+        <van-button bindclick="editPassword" block type="primary">修改密码</van-button>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+<view class="handler-lists-box" wx:if="{{ lists.length > 0 }}">
+    <view wx:for="{{lists}}" wx:for-item="r" wx:key="{{ r.id }}" class="handler-lists-main">
+        <view class="handler-lists-item" bindtap="goUrl" data-url="/pages/jieyueguihuan/detail?id={{ r.id }}">
+            <view class="handler-content">
+                <view class="handler-content-box">
+                    <view class="handler-content-left multi-line-1">图书名： {{ r.tushumingcheng }} </view>
+                    <view class="handler-content-right multi-line-1">
+                        <e-select-view module="tushuzhonglei" value="{{ r.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view>
+                    </view>
+                </view>
+                <view class="handler-content-box">
+                    <view class="handler-content-left multi-line-1">借阅单号： {{ r.jieyuedanhao }} </view>
+                   
+                </view>
+                <view class="handler-content-box">
+                    <view class="handler-content-left multi-line-1">准时/超时： {{ r.shifouzhunshi }} </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="handler-action-list">
+          
+        </view>
+    </view>
+</view>
+
+<van-empty wx:elif="{{ !loading }}" description="没有找到相关数据" />
+<v-footer />

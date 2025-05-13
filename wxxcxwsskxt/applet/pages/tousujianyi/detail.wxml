@@ -1,0 +1,46 @@
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 姓名 </view>
+            <view style="color: #999999"> {{ map.xingming }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 联系电话 </view>
+            <view style="color: #999999"> {{ map.lianxidianhua }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 反馈类型 </view>
+            <view style="color: #999999"> {{ map.fankuileixing }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 反馈状态 </view>
+            <view style="color: #999999"> {{ map.fankuizhuangtai }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 反馈时间 </view>
+            <view style="color: #999999"> {{ map.addtime }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 回复时间 </view>
+            <view style="color: #999999"> {{ map.huifushijian }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<van-tabs>
+    <van-tab title="反馈内容">
+        <view style="padding-bottom: 20rpx">
+            <view style="padding: 30rpx; line-height: 26px; background: #ffffff"> {{ map.fankuineirong }} </view>
+        </view>
+    </van-tab>
+    <van-tab title="反馈回复">
+        <view style="padding-bottom: 20rpx">
+            <view style="padding: 30rpx; line-height: 26px; background: #ffffff"> {{ map.fankuihuifu }} </view>
+        </view>
+    </van-tab>
+</van-tabs>
+<v-footer />

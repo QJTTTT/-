@@ -1,0 +1,11 @@
+<van-cell-group>
+    <van-cell title="评分">
+        <van-rate value="{{ form.pingfen }}" color="#ffd21e" void-icon="star" void-color="#eee" data-name="form.pingfen" bind:change="onInput" />
+    </van-cell>
+    <van-field type="textarea" autosize placeholder="请输入评论内容..." value="{{ form.pinglunneirong }}" data-name="form.pinglunneirong" bindinput="onInput"></van-field>
+</van-cell-group>
+
+<view style="padding: 20rpx">
+    <van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">保存</van-button>
+</view>
+<v-footer />

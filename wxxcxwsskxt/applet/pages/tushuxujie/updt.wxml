@@ -1,0 +1,34 @@
+<van-cell-group>
+    <van-cell title="图书号">
+        <view> {{ form.tushuhao }} </view>
+    </van-cell>
+
+    <van-cell title="图书名称">
+        <view> {{ form.tushumingcheng }} </view>
+    </van-cell>
+
+    <van-cell title="图书类别">
+        <view> <e-select-view module="tushuzhonglei" value="{{ form.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+    </van-cell>
+
+    <van-cell title="借阅单号">
+        <view> {{ form.jieyuedanhao }} </view>
+    </van-cell>
+
+    <van-cell title="借阅时间">
+        <view> {{ form.jieyueshijian }} </view>
+    </van-cell>
+
+    <van-cell title="归还时间">
+        <view> {{ form.guihuanshijian }} </view>
+    </van-cell>
+
+    <van-cell title="续借到" value="{{ form.xujiedao }}" label="{{ errors.xujiedao }}" bind:click="onShowxujiedao" />
+    <van-popup show="{{ showxujiedao }}" closeable position="bottom" bind:close="onClosexujiedao">
+        <van-datetime-picker type="datetime" show-toolbar="{{ false }}" data-format="Y-m-d H:i:s" value="{{ currentxujiedao }}" data-name="form.xujiedao" bind:input="onDate" />
+    </van-popup>
+
+    <van-field type="textarea" autosize placeholder="请输入续借备注..." value="{{ form.xujiebeizhu }}" data-name="form.xujiebeizhu" bindinput="onInput"></van-field>
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">发布</van-button>

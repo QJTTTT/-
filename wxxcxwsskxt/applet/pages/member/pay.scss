@@ -1,0 +1,88 @@
+/* pages/member/pay.wxss */
+
+.dingdan-info{
+  padding: 30rpx;
+
+}
+.dingdan-info-list{
+  padding: 30rpx;
+  background-color: #f2f2f2;
+  border-radius: 30rpx;
+}
+
+.dingdan-info-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.dingdan-info-item:last-child{
+  margin-bottom: 0;
+}
+.dingdan-info-item .name{
+  width: 220rpx;
+  text-align: right;
+  color: #808080;
+}
+.dingdan-info-item .value{
+  font-size: 38rpx;
+}
+.dingdan-info-item .price{
+  color: #F10A24;
+  font-size: 48rpx;
+}
+.dingdan-info-item .price::before{
+  content: '￥';
+  font-size: 24rpx;
+}
+
+.dingdan-pay-list{
+  padding: 50rpx;
+  border-radius: 30rpx;
+  background-color: #FFFFFF;
+}
+
+.dingdan-pay-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28rpx 30rpx;
+
+}
+
+.dingdan-pay-item .pay-icon,.dingdan-pay-item .pay-icon .ico{
+  width: 64rpx;
+  height: 64rpx;
+}
+.dingdan-pay-item .pay-icon{
+  margin-right: 40rpx;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 48rpx;
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.dingdan-pay-item .pay-name{
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 0;
+  color: rgb(92, 92, 92);
+}
+
+.dingdan-pay-item .pay-select{
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: #bbbbbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+
+
+.dingdan-pay-item.active .pay-select ,.dingdan-pay-item.active .pay-name{
+  color: #07C160;
+}

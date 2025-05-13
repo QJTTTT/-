@@ -1,0 +1,31 @@
+.weixin-chooseAvatar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-flow: column;
+}
+
+.weixin-chooseAvatar .weixin-chooseAvatar-btn{
+  height: 200rpx;
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  font-size: 68rpx;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  color: #DCDEE0;
+  .image{
+    width: 100%;
+    height: 100%;
+
+  }
+}
+
+.weixin-chooseAvatar .weixin-chooseAvatar-btn[plain]{
+  border: 1px solid #dedede;
+  border-radius: 10px;
+}

@@ -1,0 +1,65 @@
+<view>
+    <view class="member_head">
+        <view class="member_head_headimg">
+            <view class="headimg">
+                <e-img
+                    wx:if="{{$session.username}}"
+                    bindtap="goUrl"
+                    data-url="/pages/yonghu/updt?id={{ $session.id }}"
+                    class="image"
+                    style="width: 180rpx"
+                    pb="100"
+                    round
+                    src="{{ $session.touxiang }}"
+                />
+            </view>
+            <view class="headname">
+                <view wx:if="{{ $session.username }}"> {{ $session.xingming }} </view>
+                <view wx:else>
+                    <van-button type="primary" style="margin-right: 20rpx" plain bindclick="goUrl" data-url="/pages/login/login" size="mini">登录</van-button>
+                    <van-button type="success" plain bindclick="goUrl" data-url="/pages/yonghu/add" size="mini">注册</van-button>
+                </view>
+            </view>
+        </view>
+        <view class="user-logout" wx:if="{{ $session.username }}">
+            <van-button type="primary" plain bindclick="goUrl" data-url="/pages/yonghu/updt?id={{ $session.id }}" size="mini" style="margin-right: 20rpx">修改资料</van-button>
+            <van-button type="warning" plain bindclick="logout" size="mini">退出登录</van-button>
+        </view>
+        <image src="/static/5_01.jpg" style="width: 750rpx; height: 375rpx" />
+    </view>
+</view>
+<view style="background-color: #f2f2f2; height: 10rpx"></view>
+
+<van-grid border center="{{ true }}" clickable="{{ false }}" column-num="{{ 3 }}" :icon-size="{{ 28 }}" gutter="0" :square="{{ false }}" direction="vertical">
+    <van-grid-item text="图书借阅" url="/pages/tushujieyue/list_jieyueyonghu">
+        <view style="margin-bottom: 8rpx" slot="icon">
+            <view class="ee-icon ee-icon-tuisongjieyuexinxi" style="font-size: 32.8125rpx; color: #fff; padding: 18.75rpx; background-color: #D9061B; border-radius: 50%"></view>
+        </view>
+    </van-grid-item>
+    <van-grid-item text="图书续借" url="/pages/tushuxujie/list_jieyueyonghu">
+        <view style="margin-bottom: 8rpx" slot="icon">
+            <view class="ee-icon ee-icon-weibiaoti--" style="font-size: 32.8125rpx; color: #fff; padding: 18.75rpx; background-color: #816F0C; border-radius: 50%"></view>
+        </view>
+    </van-grid-item>
+    <van-grid-item text="图书归还" url="/pages/jieyueguihuan/list_jieyueyonghu">
+        <view style="margin-bottom: 8rpx" slot="icon">
+            <view class="ee-icon ee-icon-tushuguihuan" style="font-size: 32.8125rpx; color: #fff; padding: 18.75rpx; background-color: #0AA6AB; border-radius: 50%"></view>
+        </view>
+    </van-grid-item>
+    <van-grid-item text="我的反馈" url="/pages/tousujianyi/list_fankuiyonghu">
+        <view style="margin-bottom: 8rpx" slot="icon">
+            <view class="ee-icon ee-icon-yijianfankui" style="font-size: 32.8125rpx; color: #fff; padding: 18.75rpx; background-color: #4FA011; border-radius: 50%"></view>
+        </view>
+    </van-grid-item>
+    <van-grid-item text="我的收藏" url="/pages/shoucang/list_username">
+        <view style="margin-bottom: 8rpx" slot="icon">
+            <view class="ee-icon ee-icon-shoucang" style="font-size: 32.8125rpx; color: #fff; padding: 18.75rpx; background-color: #9f0055; border-radius: 50%"></view>
+        </view>
+    </van-grid-item>
+    <van-grid-item text="我的评价" url="/pages/pinglun/list_pinglunren">
+        <view style="margin-bottom: 8rpx" slot="icon">
+            <view class="ee-icon ee-icon-pingjia" style="font-size: 32.8125rpx; color: #fff; padding: 18.75rpx; background-color: #1583A4; border-radius: 50%"></view>
+        </view>
+    </van-grid-item>
+</van-grid>
+<v-footer />

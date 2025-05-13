@@ -1,0 +1,16 @@
+<van-cell-group>
+    <van-field type="textarea" autosize placeholder="请输入反馈回复..." value="{{ form.fankuihuifu }}" data-name="form.fankuihuifu" bindinput="onInput"></van-field>
+    <van-cell title="回复时间" value="{{ form.huifushijian }}" label="{{ errors.huifushijian }}" bind:click="onShowhuifushijian" />
+    <van-popup show="{{ showhuifushijian }}" closeable position="bottom" bind:close="onClosehuifushijian">
+        <van-datetime-picker
+            type="datetime"
+            show-toolbar="{{ false }}"
+            data-format="Y-m-d H:i:s"
+            value="{{ currenthuifushijian }}"
+            data-name="form.huifushijian"
+            bind:input="onDate"
+        />
+    </van-popup>
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">发布</van-button>

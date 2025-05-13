@@ -1,0 +1,1444 @@
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<!--<html>-->
+<h3>&nbsp;
+    创建外键索引语句:
+</h3>
+
+<pre style="padding: 20px; display: block; background: #d5d5d5;font-size: 12px">
+;
+ALTER TABLE tushuxinxi ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushujieyue ADD FOREIGN KEY (tushuxinxiid) REFERENCES tushuxinxi(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushujieyue ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushuxujie ADD FOREIGN KEY (tushujieyueid) REFERENCES tushujieyue(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushuxujie ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE jieyueguihuan ADD FOREIGN KEY (tushujieyueid) REFERENCES tushujieyue(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE jieyueguihuan ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushucaigou ADD FOREIGN KEY (tushuxinxiid) REFERENCES tushuxinxi(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushucaigou ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushubaosun ADD FOREIGN KEY (tushuxinxiid) REFERENCES tushuxinxi(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE tushubaosun ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE liulanjilu ADD FOREIGN KEY (tushuxinxiid) REFERENCES tushuxinxi(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE liulanjilu ADD FOREIGN KEY (tushuleibie) REFERENCES tushuzhonglei(id) ON UPDATE CASCADE ON DELETE CASCADE</pre>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【轮播图】模块,表名：<span style="color: #990000">lunbotu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>title</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>image</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>url</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>连接地址 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【管理员】模块,表名：<span style="color: #990000">admins</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>cx</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>权限 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>username</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>帐号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>pwd</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【用户】模块,表名：<span style="color: #990000">yonghu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>yonghuming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>用户名 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>mima</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>xingbie</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>shouji</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>手机 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>jianjie</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>简介 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>touxiang</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>头像 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>openid</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>openid </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【图书种类】模块,表名：<span style="color: #990000">tushuzhonglei</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>fenleimingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>分类名称 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【图书信息】模块,表名：<span style="color: #990000">tushuxinxi</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>jieyuejine</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>借阅金额 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>tushukucun</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书库存 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>isbnhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>ISBN号 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>zuozhe</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>作者 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>chubanshe</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>出版社 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>jieyuecishu</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>借阅次数 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>jianjie</td>
+        <td>longtext</td>
+        <td></td>
+        <td></td>
+        <td>简介 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【图书借阅】模块,表名：<span style="color: #990000">tushujieyue</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushuxinxiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书信息id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>zuozhe</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>作者 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>chubanshe</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>出版社 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>jieyuejine</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>借阅金额 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>jieyuedanhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅单号 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>jieyueshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>借阅时间 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>guihuanshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>归还时间 </td>
+    </tr>
+        <tr>
+        <td>13</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>14</td>
+        <td>dianhua</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>电话 </td>
+    </tr>
+        <tr>
+        <td>15</td>
+        <td>jieyueyonghu</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅用户 </td>
+    </tr>
+        <tr>
+        <td>16</td>
+        <td>jieyuezhuangtai</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅状态 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuxinxiid ，
+                关联表【tushuxinxi】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【图书续借】模块,表名：<span style="color: #990000">tushuxujie</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushujieyueid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书借阅id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>jieyuedanhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅单号 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>jieyueyonghu</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅用户 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>jieyueshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>借阅时间 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>guihuanshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>归还时间 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>xujiedao</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>续借到 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>xujiebeizhu</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>续借备注 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushujieyueid ，
+                关联表【tushujieyue】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【借阅归还】模块,表名：<span style="color: #990000">jieyueguihuan</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushujieyueid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书借阅id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>zuozhe</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>作者 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>chubanshe</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>出版社 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>jieyuedanhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅单号 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>jieyueshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>借阅时间 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>dianhua</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>电话 </td>
+    </tr>
+        <tr>
+        <td>13</td>
+        <td>jieyueyonghu</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>借阅用户 </td>
+    </tr>
+        <tr>
+        <td>14</td>
+        <td>jieyuejine</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>借阅金额 </td>
+    </tr>
+        <tr>
+        <td>15</td>
+        <td>guihuanshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>归还时间 </td>
+    </tr>
+        <tr>
+        <td>16</td>
+        <td>shijiguihuanshijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>实际归还时间 </td>
+    </tr>
+        <tr>
+        <td>17</td>
+        <td>jieyuetianshu</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>借阅天数 </td>
+    </tr>
+        <tr>
+        <td>18</td>
+        <td>jieyuefeiyong</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>借阅费用 </td>
+    </tr>
+        <tr>
+        <td>19</td>
+        <td>chaoshifajin</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>超时罚金 </td>
+    </tr>
+        <tr>
+        <td>20</td>
+        <td>zongfeiyong</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>总费用 </td>
+    </tr>
+        <tr>
+        <td>21</td>
+        <td>shifouzhunshi</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>是否准时 </td>
+    </tr>
+        <tr>
+        <td>22</td>
+        <td>iszf</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>是否支付 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushujieyueid ，
+                关联表【tushujieyue】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【评论】模块,表名：<span style="color: #990000">pinglun</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>biao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>表 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>biaoid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>表id </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>biaoti</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>pingfen</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>评分 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>pinglunneirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>评论内容 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>pinglunren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>评论人 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>评论时间 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【投诉建议】模块,表名：<span style="color: #990000">tousujianyi</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>lianxidianhua</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>联系电话 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>fankuileixing</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>反馈类型 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>fankuineirong</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>反馈内容 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>fankuiyonghu</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>反馈用户 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>fankuizhuangtai</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>反馈状态 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>反馈时间 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>fankuihuifu</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>反馈回复 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>huifushijian</td>
+        <td>varchar</td>
+        <td>25</td>
+        <td></td>
+        <td>回复时间 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【图书采购】模块,表名：<span style="color: #990000">tushucaigou</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushuxinxiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书信息id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>caigoubianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>采购编号 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>gongyingshang</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>供应商 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>caigoujiage</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>采购价格 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>caigoushuliang</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>采购数量 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>caigouxiaoji</td>
+        <td>decimal(10, 2)</td>
+        <td></td>
+        <td></td>
+        <td>采购小计 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>caigoubeizhu</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>采购备注 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>jingshouren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>经手人 </td>
+    </tr>
+        <tr>
+        <td>13</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>采购时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuxinxiid ，
+                关联表【tushuxinxi】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【图书报损】模块,表名：<span style="color: #990000">tushubaosun</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushuxinxiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书信息id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>baosunbianhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>报损编号 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>baosunshuliang</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>报损数量 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>baosunshuoming</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>报损说明 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>jingshouren</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>经手人 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>报损时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuxinxiid ，
+                关联表【tushuxinxi】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【收藏】模块,表名：<span style="color: #990000">shoucang</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>username</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>用户 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>xwid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>关联表id </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>biao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>关联表 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>biaoti</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>标题 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>收藏时间 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【浏览记录】模块,表名：<span style="color: #990000">liulanjilu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>tushuxinxiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书信息id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>tushuhao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>图书号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tushumingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图书名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tushuleibie</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>图书类别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>liulanyonghu</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>浏览用户 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>浏览时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuxinxiid ，
+                关联表【tushuxinxi】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：tushuleibie ，
+                关联表【tushuzhonglei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+
+
+</html>

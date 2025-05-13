@@ -1,0 +1,14 @@
+/* components/image/images.wxss */
+
+
+.images-box-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.images-box-list .image-item{
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+}
+.images-box-list .image-item:last-child{
+    margin-right: 0;
+}

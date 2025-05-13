@@ -1,0 +1,29 @@
+<view class="auto-search-content"> </view>
+
+<view wx:if="{{ lists.length > 0 }}">
+    <view class="alists-list" wx:for="{{ lists }}" wx:for-item="map">
+        <view class="alists-info">
+            <view class="left title">图书名： {{ map.biaoti }} </view>
+          
+        </view>
+        <view class="alists-info">
+        
+            <view class="right">评价内容： {{ map.pinglunneirong }} </view>
+        </view>
+        <view class="alists-info">
+         <view class="left tdown">   评分： <van-rate value="{{ map.pingfen }}" color="#ffd21e" readonly void-icon="star" void-color="#eee" /> </view>
+            <view class="right rdown"> </view>
+        </view>
+
+        <view class="alists-info alists-btn">
+            <view class="left tdown">评价时间： {{ map.addtime }} </view>
+            <view class="right rdown">
+                <van-button type="danger" size="small" bindclick="goUrl" style="margin-right: 10px;" data-url="/pages/{{map.biao}}/detail?id={{ map.biaoid }}">详情</van-button> 
+
+                <van-button type="danger" size="small" bindclick="removeItem" data-id="{{ map.id }}">删除</van-button>
+            </view>
+        </view>
+    </view>
+</view>
+<van-empty wx:elif="{{ !loading }}" description="没有找到相关数据" />
+<v-footer />

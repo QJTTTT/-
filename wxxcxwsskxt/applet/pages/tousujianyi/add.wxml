@@ -1,0 +1,22 @@
+<van-cell-group>
+    <van-field type="text" error-message="{{ errors.xingming }}" label="姓名" placeholder="输入姓名" value="{{ form.xingming }}" bindinput="onInput" data-name="form.xingming" />
+    <van-field
+        type="text"
+        error-message="{{ errors.lianxidianhua }}"
+        label="联系电话"
+        placeholder="输入联系电话"
+        value="{{ form.lianxidianhua }}"
+        bindinput="onInput"
+        data-name="form.lianxidianhua"
+    />
+    <e-select value="{{ form.fankuileixing }}" label="反馈类型" data-name="form.fankuileixing" bindchange="onInput"
+        ><e-option value="投诉" label="投诉"></e-option>
+        <e-option value="建议" label="建议"></e-option> </e-select
+    ><view class="errors">{{ errors.fankuileixing }}</view>
+    <van-field type="textarea" autosize placeholder="请输入反馈内容..." value="{{ form.fankuineirong }}" data-name="form.fankuineirong" bindinput="onInput"></van-field>
+</van-cell-group>
+
+<view style="padding: 20rpx">
+    <van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">保存</van-button>
+</view>
+<v-footer />

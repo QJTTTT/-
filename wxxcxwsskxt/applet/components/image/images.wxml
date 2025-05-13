@@ -1,0 +1,8 @@
+<!--components/image/images.wxml-->
+<view class="images-box-list">
+    <block wx:for="{{ imageList }}" wx:for-index="index">
+        <view class="image-item" bindtap="clickItem" data-index="{{ index }}" style="width: {{ width }}">
+            <e-img src="{{ item }}" pb="100"></e-img>
+        </view>
+    </block>
+</view>

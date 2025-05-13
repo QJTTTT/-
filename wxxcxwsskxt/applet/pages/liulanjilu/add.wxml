@@ -1,0 +1,16 @@
+<van-cell-group>
+    <van-cell title="图书号">
+        <view> {{ form.tushuhao }} </view>
+    </van-cell>
+    <van-cell title="图书名称">
+        <view> {{ form.tushumingcheng }} </view>
+    </van-cell>
+    <van-cell title="图书类别">
+        <view> <e-select-view module="tushuzhonglei" value="{{ form.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+    </van-cell>
+</van-cell-group>
+
+<view style="padding: 20rpx">
+    <van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">保存</van-button>
+</view>
+<v-footer />

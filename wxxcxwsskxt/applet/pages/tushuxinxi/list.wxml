@@ -1,0 +1,42 @@
+<van-dropdown-menu>
+    <van-dropdown-item value="{{ search.tushuleibie }}" bind:change="onSelectSearch" data-name="search.tushuleibie" options="{{ tushuleibieList }}" />
+    <van-dropdown-item value="{{ search.orderby }}" bind:change="onListOrderBy" options="{{ orderOptions }}" />
+</van-dropdown-menu>
+
+<van-search
+    value="{{ search.keyword }}"
+    placeholder="关键字..."
+    shape="round"
+    bind:change="onInput"
+    data-name="search.keyword"
+    bind:search="onSearchtushuxinxi"
+    show-action
+    use-action-slot
+>
+    <van-button slot="action" bind:click="onSearchtushuxinxi" size="small" round type="primary">搜索</van-button>
+</van-search>
+
+<view class="masonry-photo">
+    <view class="column" style="column-count: 2">
+        <view class="item" wx:for="{{ lists }}" wx:for-item="v">
+            <navigator url="/pages/tushuxinxi/detail?id={{ v.id }}">
+                <view class="photo-list">
+                    <view class="images">
+                        <e-img src="{{ v.tupian }}" />
+                    </view>
+                    <view class="photo-content">
+                        <view class="title"> {{ v.tushumingcheng }} </view>
+                        <view class="price"> 借阅价格：{{ v.jieyuejine }}元/天 </view>
+                        <view class="price"> 借阅次数：{{ v.jieyuecishu }}次 </view>
+
+                     
+                        <view class="photo-text-Text" style="margin-top: 10rpx">作者： {{ v.zuozhe }} </view>
+                     
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+<v-footer />

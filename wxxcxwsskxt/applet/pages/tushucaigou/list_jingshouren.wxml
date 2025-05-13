@@ -1,0 +1,35 @@
+<view class="auto-search-content">
+    <view class="auto-search-item dropdown-menu-content">
+        <view class="auto-search-left search-dropdown">
+            <van-dropdown-menu>
+                <van-dropdown-item
+                    value="{{ search.tushuleibie }}"
+                    data-name="search.tushuleibie"
+                    bind:change="onSearchSelecttushucaigou"
+                    title="图书类别"
+                    options="{{ optionstushuleibie }}"
+                ></van-dropdown-item>
+            </van-dropdown-menu>
+        </view>
+    </view>
+</view>
+
+<view class="handler-lists-box" wx:if="{{ lists.length > 0 }}">
+    <view wx:for="{{lists}}" wx:for-item="r" wx:key="{{ r.id }}" class="handler-lists-main">
+        <view class="handler-lists-item" bindtap="goUrl" data-url="/pages/tushucaigou/detail?id={{ r.id }}">
+            <view class="handler-content"> </view>
+        </view>
+
+        <view class="handler-action-list">
+            <view class="handler-action-item">
+                <van-button size="small" round plain type="warning" bindclick="goUrl" data-url="/pages/tushucaigou/updt?id={{ r.id }}">编辑 </van-button>
+            </view>
+            <view class="handler-action-item">
+                <van-button size="small" round plain type="danger" bindclick="removeItem" data-id="{{ r.id }}">删除 </van-button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<van-empty wx:elif="{{ !loading }}" description="没有找到相关数据" />
+<v-footer />

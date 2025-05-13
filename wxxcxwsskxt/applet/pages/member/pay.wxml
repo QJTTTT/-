@@ -1,0 +1,47 @@
+<view class="dingdan-info">
+    <view class="dingdan-info-list">
+        <view class="dingdan-info-item">
+            <view class="name">订单号：</view>
+            <view class="value">{{ ordersn }}</view>
+        </view>
+        <view class="dingdan-info-item">
+            <view class="name">支付金额：</view>
+            <view class="value price">{{ zongji }}</view>
+        </view>
+    </view>
+</view>
+
+<van-radio-group value="{{ payType }}">
+    <view style="padding: 20rpx">
+        <view class="dingdan-pay-list">
+            <view class="dingdan-pay-item {{ payType == 'weixin' ? 'active' : '' }}" bindtap="onInputValue" data-name="payType" data-value="weixin">
+                <view class="pay-icon">
+                    <van-icon name="wechat" color="#07C160" />
+                </view>
+                <view class="pay-name">微信支付</view>
+                <view class="pay-select">
+                    <van-radio name="weixin" checked-color="#07c160"></van-radio>
+                </view>
+            </view>
+            <view class="dingdan-pay-item {{ payType == 'zhifubao' ? 'active' : '' }}" bindtap="onInputValue" data-name="payType" data-value="zhifubao">
+                <view class="pay-icon">
+                    <van-icon name="alipay" color="#1676FE" />
+                </view>
+                <view class="pay-name">支付宝</view>
+                <view class="pay-select">
+                    <van-radio name="zhifubao" checked-color="#07c160"></van-radio>
+                </view>
+            </view>
+            <view wx:if="{{ bank }}" class="dingdan-pay-item {{ payType == 'bank' ? 'active' : '' }}" bindtap="onInputValue" data-name="payType" data-value="bank">
+                <view class="pay-icon">
+                    <van-icon name="vip-card" color="#1989FA" />
+                </view>
+                <view class="pay-name">钱包</view>
+                <view class="pay-select">
+                    <van-radio name="bank" checked-color="#07c160"></van-radio>
+                </view>
+            </view>
+        </view>
+    </view>
+</van-radio-group>
+<van-submit-bar price="{{ zongji * 100 }}" button-text="立即支付" label="支付金额：" button-type="primary" bind:submit="onPaymentOrder"> </van-submit-bar>

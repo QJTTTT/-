@@ -1,0 +1,16 @@
+module.exports = {
+    lunbotu: require("./lunbotu"),
+    admins: require("./admins"),
+    yonghu: require("./yonghu"),
+    tushuzhonglei: require("./tushuzhonglei"),
+    tushuxinxi: require("./tushuxinxi"),
+    tushujieyue: require("./tushujieyue"),
+    tushuxujie: require("./tushuxujie"),
+    jieyueguihuan: require("./jieyueguihuan"),
+    pinglun: require("./pinglun"),
+    tousujianyi: require("./tousujianyi"),
+    tushucaigou: require("./tushucaigou"),
+    tushubaosun: require("./tushubaosun"),
+    shoucang: require("./shoucang"),
+    liulanjilu: require("./liulanjilu"),
+};

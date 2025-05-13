@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "欢迎使用微信小程序网上书库系统",
+  "usingComponents": {
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-radio": "@vant/weapp/radio/index"
+  }
+}

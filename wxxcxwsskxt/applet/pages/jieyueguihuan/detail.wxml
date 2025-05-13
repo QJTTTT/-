@@ -1,0 +1,86 @@
+<e-img src="{{ map.tupian }}" pb="100"></e-img>
+
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书号 </view>
+            <view style="color: #999999"> {{ map.tushuhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书名称 </view>
+            <view style="color: #999999"> {{ map.tushumingcheng }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 图书类别 </view>
+            <view style="color: #999999"> <e-select-view module="tushuzhonglei" value="{{ map.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 作者 </view>
+            <view style="color: #999999"> {{ map.zuozhe }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 出版社 </view>
+            <view style="color: #999999"> {{ map.chubanshe }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅单号 </view>
+            <view style="color: #999999"> {{ map.jieyuedanhao }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅时间 </view>
+            <view style="color: #999999"> {{ map.jieyueshijian }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 姓名 </view>
+            <view style="color: #999999"> {{ map.xingming }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 电话 </view>
+            <view style="color: #999999"> {{ map.dianhua }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅金额 </view>
+            <view style="color: #999999"> {{ map.jieyuejine }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 归还时间 </view>
+            <view style="color: #999999"> {{ map.guihuanshijian }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 实际归还时间 </view>
+            <view style="color: #999999"> {{ map.shijiguihuanshijian }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 借阅费用 </view>
+            <view style="color: #999999"> {{ map.jieyuefeiyong }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 超时罚金 </view>
+            <view style="color: #999999"> {{ map.chaoshifajin }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 总费用 </view>
+            <view style="color: #999999"> {{ map.zongfeiyong }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 是否准时 </view>
+            <view style="color: #999999"> {{ map.shifouzhunshi }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<van-submit-bar
+    wx:if="{{ map.iszf == '否' }}"
+    price="{{ map.zongfeiyong * 100 }}"
+    button-text="立即支付"
+    label="支付金额："
+    margin-bottom="91rpx"
+    button-type="info"
+    bind:submit="onPaymentOrder"
+>
+</van-submit-bar>
+<v-footer />

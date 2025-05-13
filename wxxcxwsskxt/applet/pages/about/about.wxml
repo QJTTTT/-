@@ -1,0 +1,6 @@
+<view style="padding: 20rpx; font-size: 30rpx; text-align: center">
+    <view style="display: flex; justify-content: center; margin-top: 200rpx; margin-bottom: 30rpx">
+        <image src="../../static/logo.png" mode="widthFix" style="width: 28%; border-radius: 10rpx"></image>
+    </view>
+    <text>欢迎使用本小程序，开启你的探索之旅</text>
+</view>

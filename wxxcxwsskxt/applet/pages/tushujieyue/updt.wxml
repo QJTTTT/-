@@ -1,0 +1,67 @@
+<van-cell-group>
+    <van-cell title="图书号">
+        <view> {{ form.tushuhao }} </view>
+    </van-cell>
+
+    <van-cell title="图书名称">
+        <view> {{ form.tushumingcheng }} </view>
+    </van-cell>
+
+    <van-cell title="图书类别">
+        <view> <e-select-view module="tushuzhonglei" value="{{ form.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+    </van-cell>
+
+    <van-cell title="图片">
+        <view> <e-img src="{{ form.tupian }}" max-width="120" /> </view>
+    </van-cell>
+
+    <van-cell title="作者">
+        <view> {{ form.zuozhe }} </view>
+    </van-cell>
+
+    <van-cell title="出版社">
+        <view> {{ form.chubanshe }} </view>
+    </van-cell>
+
+    <van-cell title="借阅金额">
+        <view> {{ form.jieyuejine }} </view>
+    </van-cell>
+
+    <van-field
+        type="text"
+        error-message="{{ errors.jieyuedanhao }}"
+        label="借阅单号"
+        placeholder="输入借阅单号"
+        value="{{ form.jieyuedanhao }}"
+        bindinput="onInput"
+        data-name="form.jieyuedanhao"
+    />
+    <van-cell title="借阅时间" value="{{ form.jieyueshijian }}" label="{{ errors.jieyueshijian }}" bind:click="onShowjieyueshijian" />
+    <van-popup show="{{ showjieyueshijian }}" closeable position="bottom" bind:close="onClosejieyueshijian">
+        <van-datetime-picker
+            type="datetime"
+            show-toolbar="{{ false }}"
+            data-format="Y-m-d H:i:s"
+            value="{{ currentjieyueshijian }}"
+            data-name="form.jieyueshijian"
+            bind:input="onDate"
+        />
+    </van-popup>
+
+    <van-cell title="归还时间" value="{{ form.guihuanshijian }}" label="{{ errors.guihuanshijian }}" bind:click="onShowguihuanshijian" />
+    <van-popup show="{{ showguihuanshijian }}" closeable position="bottom" bind:close="onCloseguihuanshijian">
+        <van-datetime-picker
+            type="datetime"
+            show-toolbar="{{ false }}"
+            data-format="Y-m-d H:i:s"
+            value="{{ currentguihuanshijian }}"
+            data-name="form.guihuanshijian"
+            bind:input="onDate"
+        />
+    </van-popup>
+
+    <van-field type="text" error-message="{{ errors.xingming }}" label="姓名" placeholder="输入姓名" value="{{ form.xingming }}" bindinput="onInput" data-name="form.xingming" />
+    <van-field type="text" error-message="{{ errors.dianhua }}" label="电话" placeholder="输入电话" value="{{ form.dianhua }}" bindinput="onInput" data-name="form.dianhua" />
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">发布</van-button>

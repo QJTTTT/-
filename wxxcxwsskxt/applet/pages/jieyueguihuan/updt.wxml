@@ -1,0 +1,68 @@
+<van-cell-group>
+    <van-cell title="图书号">
+        <view> {{ form.tushuhao }} </view>
+    </van-cell>
+
+    <van-cell title="图书名称">
+        <view> {{ form.tushumingcheng }} </view>
+    </van-cell>
+
+    <van-cell title="图书类别">
+        <view> <e-select-view module="tushuzhonglei" value="{{ form.tushuleibie }}" select="id" show="fenleimingcheng"></e-select-view> </view>
+    </van-cell>
+
+    <van-cell title="图片">
+        <view> <e-img src="{{ form.tupian }}" max-width="120" /> </view>
+    </van-cell>
+
+    <van-cell title="作者">
+        <view> {{ form.zuozhe }} </view>
+    </van-cell>
+
+    <van-cell title="出版社">
+        <view> {{ form.chubanshe }} </view>
+    </van-cell>
+
+    <van-cell title="借阅单号">
+        <view> {{ form.jieyuedanhao }} </view>
+    </van-cell>
+
+    <van-cell title="借阅时间">
+        <view> {{ form.jieyueshijian }} </view>
+    </van-cell>
+
+    <van-cell title="姓名">
+        <view> {{ form.xingming }} </view>
+    </van-cell>
+
+    <van-cell title="电话">
+        <view> {{ form.dianhua }} </view>
+    </van-cell>
+
+    <van-cell title="借阅金额">
+        <view> {{ form.jieyuejine }} </view>
+    </van-cell>
+
+    <van-cell title="归还时间">
+        <view> {{ form.guihuanshijian }} </view>
+    </van-cell>
+
+    <van-cell title="实际归还时间" value="{{ form.shijiguihuanshijian }}" label="{{ errors.shijiguihuanshijian }}" bind:click="onShowshijiguihuanshijian" />
+    <van-popup show="{{ showshijiguihuanshijian }}" closeable position="bottom" bind:close="onCloseshijiguihuanshijian">
+        <van-datetime-picker
+            type="datetime"
+            show-toolbar="{{ false }}"
+            data-format="Y-m-d H:i:s"
+            value="{{ currentshijiguihuanshijian }}"
+            data-name="form.shijiguihuanshijian"
+            bind:input="onDate"
+        />
+    </van-popup>
+
+    <e-select value="{{ form.shifouzhunshi }}" label="是否准时" data-name="form.shifouzhunshi" bindchange="onInput"
+        ><e-option value="准时" label="准时"></e-option>
+        <e-option value="超时" label="超时"></e-option> </e-select
+    ><view class="errors">{{ errors.shifouzhunshi }}</view>
+</van-cell-group>
+
+<van-button type="primary" bindclick="submit" block loading="{{ loading }}" loading-text="发布中">发布</van-button>

@@ -1,0 +1,497 @@
+
+@import './miniprogram_npm/@vant/weapp/icon/index.wxss';
+
+
+
+@import './components/ee-icon.wxss';
+
+page {
+    /* 主色 */
+    --theme-primary-color: rgba(51, 153, 204, 1);
+    /* 副色 */
+    --theme-secondary-color: rgba(51, 153, 204, 1);
+    
+    /* 设置表单标签的宽度 */
+    --form-label-width: 120px;
+    /* 表单填写错误的时候提示颜色 */
+    --theme-error-color: #f56c6c;
+    
+    
+    /* 字体大小 */
+    --theme-font-size: 15px;
+    /* 字体颜色 */
+    --theme-color: #606060;
+    /* 背景颜色 */
+    --theme-background-color: #f2f2f2;
+}
+
+page {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+    background: var(--theme-background-color,#f2f2f2);
+
+}
+page,view,image,input {
+    display: block;
+    box-sizing: border-box;
+}
+.divider{
+    height: 26rpx;
+    width: 100%;
+    background-color: #fff;
+}
+
+.van-goods-action{
+    z-index: 100;
+}
+
+
+.cell-title{
+    font-size: 30rpx;
+    color: #000000;
+    padding: 30rpx;
+}
+
+.display-flex{
+    display: flex;
+}
+.display-block{
+    display: block;
+}
+.display-inline{
+    display: inline;
+}
+.display-inline-block{
+    display: inline-block;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-items-center{
+    align-content: center;
+}
+.flex-grow0{
+    flex-grow: 0;
+}
+.flex-grow1{
+    flex-grow: 1;
+}
+.flex-shrink0{
+    flex-shrink: 0;
+}
+.flex-shrink1{
+    flex-shrink: 1;
+}
+
+
+.justify-content-space-between{
+    justify-content: space-between;
+}
+
+.mr5{
+    margin-right: 10rpx;
+}
+
+.value-class {
+    flex: none !important;
+}
+
+.flex-flow-row{
+    flex-flow: row;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-flow-column{
+    flex-flow: column;
+}
+
+
+.multi-line-1,.multi-line-2,.multi-line-3,.multi-line-4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.multi-line-1{
+    -webkit-line-clamp: 1;
+}
+.multi-line-2{
+    -webkit-line-clamp: 2;
+}
+.multi-line-3{
+    -webkit-line-clamp: 3;
+}
+.multi-line-4{
+    -webkit-line-clamp: 4;
+}
+
+
+.masonry-photo{
+    .column {
+      column-count: 2;
+      column-gap: 20rpx;
+    }
+    .item{
+          margin-bottom: 10rpx;
+          background: #ffffff;
+          break-inside: avoid;
+          -webkit-column-break-inside: avoid;
+          counter-increment: item-counter;
+    }
+    .photo-list {
+      margin-bottom: 43rpx;
+      background-color: #ffffff;
+      border-radius: 20rpx;
+      overflow: hidden;
+    }
+    .photo-list .title {
+      font-size: 28rpx;
+      color: #1d1d1d;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 5px;
+    }
+    .photo-list .photo-content{
+      padding: 20rpx 10rpx;
+    }
+    .photo-list .price{
+      color: #ff5000;
+      margin-bottom: 5px;
+      font-size: 28rpx;
+    }
+    .photo-list .description {
+      font-size: 22rpx;
+      color: #9c9c9c;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+}
+.commit-content{
+	background-color: #ffffff;
+    .commit-btn{
+      text-align: right;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px;
+      align-items: center;
+    }
+}
+.commit-list{
+    .zhihu-pinglun-images{
+		display: flex;
+		width: 100%;
+		overflow-y: auto;
+		margin-top: 5px;
+		.zhihu-pinglun-images-item{
+			flex-shrink: 0;
+			width: 28%;
+			margin-right: 10px;
+		}
+	}
+}
+.commit-info{
+  display: flex;
+  padding: 10rpx;
+  background-color: #fff;
+}
+.commit-user-headimg{
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 80rpx;
+  margin-right: 20rpx;
+}
+.user-img{
+
+}
+
+.commit-user-headimg.radius .user-img{
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.commit-user-content{
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+.commit-user-nickname{
+  color: #700000;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commit-user-nickname.not-time{
+  padding-top: 20rpx;
+}
+.commit-user-time{
+  color: #999999;
+  margin-bottom: 20rpx;
+}
+.commit-user-not-time{
+  height: 30rpx;
+}
+.commit-line-block{
+  height: 10rpx;
+  background: #F2F2F2;
+}
+
+
+
+
+.handler-lists-main{
+    font-size: 25rpx;
+    margin-bottom: 10rpx;
+    .handler-lists-item{
+        width: 100%;
+        display: flex;
+        padding: 10rpx;
+        background: #FFFFFF;
+        .thumb{
+            width: 120rpx;
+            height: 120rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10rpx;
+            position: relative;
+            .tupian{
+                width: 120rpx;
+                height: 120rpx;
+                background: #F5F5F5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #999999;
+                font-size: 28rpx;
+                overflow: hidden;
+                img{
+                    object-fit: cover;
+                }
+            }
+            .handler-action{
+                position: absolute;
+                top: 4rpx;
+                left: 4rpx;
+                font-size: 18rpx;
+                border-radius: 6rpx;
+                padding: 4rpx;
+                background: var(--theme-primary-color, #38a100);
+                color: #FFFFFF;
+            }
+        }
+        .handler-content{
+            display: flex;
+            flex-flow: column;
+            flex-grow: 1;
+            .handler-content-box{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10rpx;
+                .handler-content-left{
+                    width: 70%;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                }
+                .handler-content-right{
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                    text-align: right;
+                }
+            }
+            .handler-content-newLine{
+                .new-line-content{
+                    display: flex;
+                    align-items: center;
+
+                    .new-line-left{
+                        width: 10rpx;
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                    }
+                    .new-line-right{
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                    }
+                }
+                width: 100%;
+            }
+            .handler-content-box:first-child{
+                font-size: 28rpx;
+                color: var(--theme-primary-color);
+            }
+            .handler-content-box:nth-child(3),.handler-content-box:nth-child(4),.handler-content-box:nth-child(5)
+            {
+                color: #575757;
+            }
+        }
+    }
+
+    .handler-shop-list{
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #dedede;
+        .handler-shop-item{
+            width: 20%;
+            padding: 10rpx;
+        }
+        .handler-shop-content {
+            background: #FFFFFF;
+            padding: 4rpx;
+            .shop-image{
+                width: 100%;
+                overflow: hidden;
+            }
+            .shop-title{
+                line-height: 22px;
+                color: #727272;
+            }
+        }
+    }
+    .handler-action-list{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10rpx;
+        background: #FFFFFF;
+        flex-wrap: wrap;
+        .handler-action-item{
+            margin-left: 10rpx;
+        }
+    }
+}
+
+.search-content {
+    padding: 8px;
+    font-size: 12px;
+    .form-between-input {
+        width: 130rpx;
+        border: 1px solid #dedede;
+        height: 30rpx;
+        padding: 0 10rpx;
+        line-height: 30rpx;
+    }
+    .form-input-search-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .form-item-label {
+        margin-bottom: 5px;
+        flex-shrink: 0;
+        width: 90rpx;
+    }
+
+    .form-item-box {
+        display: flex;
+        align-items: center;
+
+    }
+    .form-item-go {
+        margin-right: 5rpx;
+        margin-left: 5rpx;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.alists-list{
+  border-bottom: 10px solid #DEDEDE;
+  .alists-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #DEDEDE;
+    font-size: 13px;
+    color: #999999;
+    .left{
+      font-size: 11px;
+    }
+    .title{
+      color: #414141;
+      font-size: 16px;
+    }
+  }
+  .alists-info:last-child{
+    border-bottom: none;
+  }
+}
+.alists-list:last-child{
+  border-bottom: none;
+}
+
+
+.member-head-menu{
+  background: #ffffff;
+  position:relative;
+}
+.member-head-menu>.ul{
+  display: flex;
+}
+.member-head-menu>.ul>.li{
+  padding: 5px;
+  flex-grow: 1;
+}
+.member-head-menu>.ul>.li>.a{
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5px;
+  color: #282828;
+  border-right: 1px solid #e9e9e9;
+}
+.member-head-menu>.ul>.li:last-child>.a{
+  border-right: none;
+}
+.member-head-menu>.ul>.li>.a>.p{
+  font-size: 10px;
+}
+.member_head{
+  position: relative;
+  .user-logout{
+      position:absolute;
+      right: 18rpx;
+      top: 18rpx;
+    }
+}
+.member_head_headimg{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  height: 180rpx;
+  line-height: 180rpx;
+  z-index: 3;
+}
+.member_head_headimg .headimg{
+  padding: 2px;
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 10px;
+}
+.member_head_headimg .headimg .image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.member_head_headimg .headname{
+  line-height: 25px;
+  padding-top: 30px;
+  color: #887242;
+  font-size: 18px;
+}

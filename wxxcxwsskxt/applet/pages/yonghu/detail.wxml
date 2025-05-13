@@ -1,0 +1,29 @@
+<view>
+    <van-cell-group>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> </view>
+            <view style="color: #999999"> </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 用户名 </view>
+            <view style="color: #999999"> {{ map.yonghuming }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 姓名 </view>
+            <view style="color: #999999"> {{ map.xingming }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 性别 </view>
+            <view style="color: #999999"> {{ map.xingbie }} </view>
+        </van-cell>
+        <van-cell icon="" arrow-direction="right">
+            <view slot="title" style="color: #000000"> 手机 </view>
+            <view style="color: #999999"> {{ map.shouji }} </view>
+        </van-cell>
+    </van-cell-group>
+</view>
+
+<view style="padding-bottom: 20rpx">
+    <view style="padding: 30rpx; line-height: 26px; background: #ffffff"> {{ map.jianjie }} </view>
+</view>
+<v-footer />

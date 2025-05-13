@@ -1,0 +1,56 @@
+<van-notice-bar mode="" text="欢迎使用微信小程序网上书库系统系统" scrollable="1" color="#f60" background="#fff7cc">
+    <view slot="left-icon" class="van-notice-bar__left-icon"> <view class="van-icon van-icon-volume-o" style=""></view> </view>
+</van-notice-bar>
+
+<swiper indicator-dots="{{ true }}" autoplay="{{ true }}" interval="{{ 5000 }}">
+    <swiper-item wx:for="{{ bhtList }}">
+        <e-img src="{{ item.image }}" pb="50"></e-img>
+    </swiper-item>
+</swiper>
+
+<van-nav-bar title="热门图书" safe-area-inset-top="{{ false }}"> </van-nav-bar>
+
+<view class="masonry-photo">
+    <view class="column" style="column-count: 2">
+        <view class="item" wx:for="{{ tushuxinxilist1 }}" wx:for-item="v">
+            <navigator url="/pages/tushuxinxi/detail?id={{ v.id }}">
+                <view class="photo-list">
+                    <view class="images">
+                        <e-img src="{{ v.tupian }}" />
+                    </view>
+                    <view class="photo-content">
+                        <view class="title"> {{ v.tushumingcheng }} </view>
+                        <view class="price"> 借阅价格：{{ v.jieyuejine }}元/天 </view>
+                        <view class="price"> 借阅次数：{{ v.jieyuecishu }}次 </view>
+
+                     
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+<van-nav-bar title="推荐图书" safe-area-inset-top="{{ false }}"> </van-nav-bar>
+
+<view class="masonry-photo">
+    <view class="column" style="column-count: 1">
+        <view class="item" wx:for="{{ tushuxinxilist2 }}" wx:for-item="v">
+            <navigator url="/pages/tushuxinxi/detail?id={{ v.id }}">
+                <view class="photo-list">
+                    <view class="images">
+                        <e-img src="{{ v.tupian }}" />
+                    </view>
+                    <view class="photo-content">
+                        <view class="title"> {{ v.tushumingcheng }} </view>
+                        <view class="price"> 借阅价格：{{ v.jieyuejine }}元/天 </view>
+
+                    
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+<v-footer />
